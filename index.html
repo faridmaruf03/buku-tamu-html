@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buku Tamu Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container" id="container">
+    <h1>Buku Tamu Digital KKN Kradenanrejo</h1>
+    <form class="guest-form" id="guestForm">
+      <label>Nama Tamu</label>
+      <input type="text" id="nama" placeholder="Masukkan nama tamu" required>
+
+      <label>Tanggal Kedatangan</label>
+      <input type="date" id="tanggal" required>
+      
+      <label>Keperluan</label>
+      <textarea id="keperluan" placeholder="Keperluan tamu" required></textarea>
+      
+      <label>Foto</label>
+      <input type="file" id="foto" accept="image/*">
+      
+      <button type="submit" class="primary-btn" id="saveBtn">Simpan</button>
+    </form>
+
+    <hr>
+    <h2>Rekap Data Tamu</h2>
+    <div class="btn-group">
+      <button class="print-btn" onclick="cetakPDF()">Cetak PDF</button>
+      <button class="delete-btn" onclick="hapusSemua()">Hapus Semua</button>
+    </div>
+    <table id="guestTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Tanggal</th>
+          <th>Keperluan</th>
+          <th>Foto</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data tamu akan ditampilkan di sini -->
+      </tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
